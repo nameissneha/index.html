@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Just One Question 💖</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at top, #ffd6e7, #ff9eb5);
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      color: #5a0f2e;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      font-size: 20px;
+      animation: float 7s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 0;
+      }
+      10% { opacity: 1; }
+      100% {
+        transform: translateY(-10vh) scale(1.4);
+        opacity: 0;
+      }
+    }
+
+    /* Main content */
+    .content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+      animation: fadeIn 2s ease;
+    }
+
+    .line {
+      font-size: 16px;
+      max-width: 500px;
+      margin-bottom: 15px;
+      opacity: 0.9;
+      animation: fadeIn 3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .gif {
+      width: 190px;
+      border-radius: 20px;
+      margin: 10px 0 15px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+      animation: fadeIn 4s ease;
+    }
+
+    .confession {
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 420px;
+      margin-bottom: 20px;
+      animation: fadeIn 5s ease;
+    }
+
+    .buttons {
+      position: relative;
+      height: 60px;
+      width: 260px;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 12px 24px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+    }
+
+    #yes {
+      left: 0;
+      background: #ff4d6d;
+      color: white;
+      box-shadow: 0 10px 25px rgba(255,77,109,0.5);
+    }
+
+    #no {
+      right: 0;
+      background: white;
+      color: #333;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #a3003f;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- floating hearts -->
+  <div class="heart" style="left:10%; animation-delay:0s;">💖</div>
+  <div class="heart" style="left:20%; animation-delay:2s;">💗</div>
+  <div class="heart" style="left:35%; animation-delay:4s;">💘</div>
+  <div class="heart" style="left:55%; animation-delay:1s;">💞</div>
+  <div class="heart" style="left:70%; animation-delay:3s;">💕</div>
+  <div class="heart" style="left:85%; animation-delay:5s;">💓</div>
+
+  <div class="content">
+    <h1>Will you be mine? 🥺💖</h1>
+
+    <div class="line">
+      Don’t look around… don’t overthink…  
+      just look at the screen 💌
+    </div>
+
+    <!-- Anime-style romantic GIF -->
+    <img
+      src="https://media.giphy.com/media/9d3LQ6TdV2Flo8ODTU/giphy.gif"
+      class="gif"
+      alt="shy anime couple"
+    >
+
+    <div class="confession">
+      I don’t know the perfect words 🙈  
+      But my heart feels calm when I think of you 💗  
+      If this moment made you smile even a little…  
+      maybe you already know the answer 😌✨
+    </div>
+
+    <div class="buttons">
+      <button id="yes" onclick="sayYes()">YES 💕</button>
+      <button id="no" onmouseover="moveNo()">NO 😅</button>
+    </div>
+
+    <div id="message"></div>
+  </div>
+
+  <script>
+    function sayYes() {
+      document.getElementById("message").innerHTML =
+        "YAY 😍💖 You just made my heart very happy!";
+    }
+
+    function moveNo() {
+      const no = document.getElementById("no");
+      const x = Math.random() * 140;
+      const y = Math.random() * 40;
+      no.style.transform = `translate(${x}px, ${y}px)`;
+    }
+  </script>
+
+</body>
+</html>
